@@ -935,6 +935,7 @@ body {
         right: 20px;
         left: auto;
         transform: none;
+        height: 40px;
     }
 
     .cards-container {
