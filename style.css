@@ -880,7 +880,7 @@ body {
 
 @media (max-width: 768px) {
     body {
-        overflow-y: hidden;
+        overflow-y: auto;
     }
 
     .container {
