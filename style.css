@@ -930,6 +930,10 @@ body {
     .continue-button {
         padding: 10px 25px;
         font-size: 14px;
+        top: 20px;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .cards-container {
