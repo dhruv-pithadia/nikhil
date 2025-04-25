@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>From Dhruv</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <audio id="backgroundMusic" src="Tere Jaisa Yaar Kahan - Yaarana 128 Kbps.mp3" loop></audio>
+    <div class="container">
+        <div class="particles" id="particles"></div>
+        <div class="hearts" id="hearts"></div>
+
+        <!-- Gift Section -->
+        <div id="giftContainer" class="gift-container">
+            <div class="gift-box" id="giftBox">
+                <div class="lid" id="lid"></div>
+                <div class="body">
+                    <div class="ribbon ribbon-v"></div>
+                    <div class="ribbon ribbon-h"></div>
+                </div>
+            </div>
+            <p class="gift-text">This is the only thing i am good at, <br>and what you are gonna see next might look
+                simple<br>
+                but it has got about 3000 lines of code written by me.</p>
+        </div>
+
+        <!-- Slider Container: Emotional montage (no continue button here in HTML) -->
+        <div id="sliderContainer" class="slider-container" style="display: none;">
+            <div class="slider-track">
+                <div class="slider-content active" id="slide1">
+                    <div class="slide-text-container">
+                        <p class="slider-text">You mean the world to me. Every moment with you is a treasure.</p>
+                    </div>
+                    <div class="slide-image-container">
+                        <img class="slider-image" src="1.JPG" alt="Memory 1">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="slider-content" id="slide2">
+                    <div class="slide-text-container">
+                        <p class="slider-text">Our friendship has become my life's greatest blessing.</p>
+                    </div>
+                    <div class="slide-image-container">
+                        <img class="slider-image" src="2.JPG" alt="Memory 2">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="slider-content" id="slide3">
+                    <div class="slide-text-container">
+                        <p class="slider-text">Through all of life's ups and downs, you've been my constant.</p>
+                    </div>
+                    <div class="slide-image-container">
+                        <img class="slider-image" src="3.JPG" alt="Memory 3">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                <div class="slider-content" id="slide4">
+                    <div class="slide-text-container">
+                        <p class="slider-text">Thank you for being you, and for letting me be me.</p>
+                    </div>
+                    <div class="slide-image-container">
+                        <img class="slider-image" src="5.JPG" alt="Memory 4">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-navigation">
+                <button class="nav-btn prev-btn" id="prevSlide">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+                    </svg>
+                </button>
+                <div class="slider-indicators">
+                    <span class="indicator active" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                </div>
+                <button class="nav-btn next-btn" id="nextSlide">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- The continue button will be appended dynamically via JS when the slider finishes -->
+        </div>
+
+        <!-- Cards Container -->
+        <div id="cardsContainer" class="cards-container">
+            <div class="card card-pink" id="card0">
+                <h2>The Truth Beneath My Silence</h2>
+                <p>
+                    I’ve hurt you in ways I’m only beginning to understand. Not because I wanted to — but because I
+                    didn’t know how to
+                    show I was hurting too.
+                    <br><br>
+                    I clung to pride when I should’ve held your hand. I raised my voice when I should’ve softened my
+                    heart. I let ego
+                    sit in the space where love should’ve been.
+                    <br><br>
+                    The truth is — I was scared. Scared of being seen. Scared of being vulnerable. Scared that if I
+                    stripped away my
+                    defences, I’d be left empty. But you saw past that. You stayed patient. You stayed kind.
+                    <br><br>
+                    If I’m honest… all I ever wanted was to be loved the way you love — and I didn’t know how to say it.
+                    I’m saying it
+                    now.
+                </p>
+                <div class="arrow" id="arrow0">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card card-green" id="card1">
+                <h2>The Part of Me You Built</h2>
+                <p>
+                    Two years ago, I was just a boy trying to act like he had it all figured out — loud, stubborn,
+                    scared of being
+                    wrong.
+                    <br><br>
+                    But then came you — with your calm, your clarity, your quiet strength. You didn’t just believe in
+                    who I could be —
+                    you showed me. You groomed me, shaped me, and softened the sharp edges I used to hide behind.
+                    <br><br>
+                    Today, whatever strength I carry… it’s because of you. You say I have your part in me — and I know
+                    exactly what you
+                    mean now. It’s the patience I try to mirror, the kindness I still fall short of, the courage I
+                    borrow every time I
+                    want to give up.
+                    <br><br>
+                    I don’t know what life has planned for me, but one thing I promise — I’ll protect the part of you
+                    that lives in me.
+                    That part will never be broken, never be compromised, and never be forgotten.
+                </p>
+                <div class="arrow" id="arrow1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card card-yellow" id="card2">
+                <h2>Thank You for Loving Me Through My Immaturity</h2>
+                <p>
+                    I’ve said things in anger, let my pride speak louder than my heart, and acted like a grown-up
+                    without understanding
+                    what it truly meant. I’ve mistaken loudness for strength, and silence for weakness. And in all those
+                    moments — you
+                    stayed.
+                    <br><br>
+                    Behind every tantrum, every reckless word, there was a 21-year-old kid, scared of not being enough,
+                    scared of losing
+                    someone like you. But you... you didn’t just walk away. You held your ground and held me
+                    accountable, even when I
+                    made it hard.
+                    <br><br>
+                    So, thank you — for loving me through the noise, the mess, the moments where I was more fire than
+                    sense. You’ve
+                    taught me that real love isn’t just about intensity — it’s about maturity, patience, and growth. I’m
+                    still
+                    learning... but I promise I’m learning with you in mind.
+                </p>
+                <div class="arrow" id="arrow2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card card-blue" id="card3">
+                <h2>More Than Blood, Stronger Than Labels</h2>
+                <p>
+                    You're not just someone I look up to — you're the person who redefined what it means to show up for
+                    someone. Less
+                    than a father, more than a brother, and nothing short of my truest friend.
+                    <br><br>
+                    I've watched how you lead with grace, how you think with depth, and how you carry your world with
+                    quiet strength.
+                    And in doing so, you've unknowingly given me a blueprint — of how I want to live, love, and lead.
+                    <br><br>
+                    I don’t admire you out of comparison. I admire you because you’ve carved a space in my heart that no
+                    one else could
+                    — the kind that doesn’t just inspire, but anchors. You’re the calm I didn’t know I needed, and the
+                    fire that made me
+                    grow.
+                </p>
+                <div class="arrow" id="arrow3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card card-purple" id="card4">
+                <h2>You are the Jay to my Veeru</h2>
+                <p>
+                    You're the one I rely on. The one I laugh with. You're the Harvey to my Mike, the Batman to my
+                    Robin and i found a new comparison, The Jay to my Veeru.
+                    And without you, my story feels incomplete. You've always had my back. I want to have yours —
+                    always.
+                </p>
+                <div class="arrow" id="arrow4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="card card-red" id="card5">
+                <h2>A Final Promise</h2>
+                <p>
+                    I may have messed up. But I'll never stop trying to be someone worthy of your love, respect, and
+                    friendship. This isn't just an apology — it's a promise. From the real me. The one who loves you
+                    more
+                    than ego, pride, or fear.
+                </p>
+            </div>
+        </div>
+
+        <!-- <div class="progress-bar" id="progressBar">
+            <div class="progress-dot active"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+            <div class="progress-dot"></div>
+        </div> -->
+
+        <div class="final-message" id="finalMessage">
+            Thank you for listening.
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
